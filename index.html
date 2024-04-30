@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+        function realizarLogin(){
+            const inputEmail = document.getElementById("email");
+            const inputSenha = document.getElementById("senha");
+
+            console.log(">>>", inputEmail.value, inputSenha.value);
+
+            const data = {
+                usuario: inputEmail.value,
+                senha: inputSenha.value,
+            }
+
+            axios
+                .post(`http://localhost:8081/usuarios/login`, data, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
+                .then((response) => {
+                    if (response.status === 201) {
+                        alert("Deu certo");
+                        //window.location.href="../home/index.html";
+                        localStorage.setItem("cliente.login", JSON.stringify(response.data));
+                    }
+                })
+                .catch((error) => {
+                    alert(`Erro não mapeado: ${error.message}`)
+                })
+        }
+    </script>
+</head>
+<body>
+    <div class="body">
+        <div class="login">
+            <div class="campos">
+                <label for="email">Usuario:</label>
+                <input type="email" id="email">
+            </div>
+
+            <div class="campos">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha">
+            </div>
+
+            <div class="campos">
+                <button onclick="realizarLogin()">Entrar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

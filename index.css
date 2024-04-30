@@ -1,0 +1,15 @@
+.body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.login {
+    margin-top: 50px;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
