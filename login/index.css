@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    margin-top: 10%;
+    background-color: #228B22;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Add shadows to create the "card" effect */
+    border: 3px solid white;
+    border-radius: 10px;
+    width: 20%;
+    background-color: #556B2F;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 10%;
+}
+
+.login input {
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.login button {
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: #808080;
+    border: 0px;
+}
+
+button:active {
+    box-shadow: 5px 5px #666;
+}
+
+.logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.logo-borda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 48%;
+    background-color: #C0C0C0;
+}
+
+.logo-borda .fa-3x{
+    margin: 20px;
+}
